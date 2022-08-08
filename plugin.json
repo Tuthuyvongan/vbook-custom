@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "author": "Custom from Moleys",
+    "description": "🧐"
+  },
+  "data": [
+    {
+      "name": "STV Limited ver Tiếng Trung",
+      "author": "Moleys",
+      "path": "https://raw.githubusercontent.com/Moleys/vbook-ext/main/stvcn/plugin.zip",
+      "version": 24,
+      "source": "https://sangtacviet.info",
+      "icon": "https://raw.githubusercontent.com/Moleys/vbook-ext/main/stvcn/icon.png",
+      "description": "Ngôn ngữ của extension này là tiếng TRUNG QUỐC, không phải TIẾNG VIỆT",
+      "type": "chinese_novel",
+      "locale": "zh_CN"
+    }
+  ]
+}

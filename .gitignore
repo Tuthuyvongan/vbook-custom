@@ -1,0 +1,12 @@
+.idea/*
+*.iml
+*test.json
+data.json
+*.rar
+*.bak
+_*/
+.test
+/truyendichwaka
+/readdouban
+/cuutruyen
+/tienvuc

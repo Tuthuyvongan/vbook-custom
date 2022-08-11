@@ -6,7 +6,7 @@ function execute(url) {
   let source = url.split("/")[4];
   let bookId = doc.select("span[id=hiddenid]").first().text().split(";")[0];
   let newUrl =
-    "https://sangtacviet.pro/index.php?ngmar=chapterlist&h=" +
+    "https://sangtacviet.pro/truyen/index.php?ngmar=chapterlist&h=" +
     source +
     "&bookid=" +
     bookId +

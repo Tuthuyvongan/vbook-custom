@@ -7,10 +7,10 @@
     {
       "name": "STV Limited ver Tiếng Trung",
       "author": "Moleys",
-      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stvcn/plugin.zip",
+      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stv/plugin.zip",
       "version": 24,
       "source": "https://sangtacviet.pro",
-      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stvcn/icon.png",
+      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stv/icon.png",
       "description": "Ngôn ngữ của extension này là tiếng TRUNG QUỐC, không phải TIẾNG VIỆT",
       "type": "chinese_novel",
       "locale": "zh_CN"

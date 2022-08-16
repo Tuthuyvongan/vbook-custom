@@ -1,8 +1,8 @@
 function execute(url) {
   if (url.slice(-1) !== "/") url = url + "/";
   let el1 = "";
-  var browser = Engine.newBrowser(); // Khởi tạo browser
-  let doc = browser.launch(url, 5500); // Mở trang web với timeout, trả về Document object
+  var browser = Engine.newBrowser(); 
+  let doc = browser.launch(url, 5500); 
   el1 = doc.select(".contentbox");
   browser.close();
   // console.log(el1)

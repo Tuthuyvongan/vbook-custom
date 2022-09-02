@@ -3,8 +3,8 @@ function execute(url) {
   if (url.slice(-1) !== "/") url = url + "/";
   let response = fetch(url);
   let doc = response.html();
-  let source = url.split("/")[4];
-  let bookId = doc.select("span[id=hiddenid]").first().text().split(";")[0];
+  let source = "ciweimao";
+  let bookId = "1";
   let newUrl =
     "https://sangtacviet.pro/truyen/index.php?ngmar=chapterlist&h=" +
     source +

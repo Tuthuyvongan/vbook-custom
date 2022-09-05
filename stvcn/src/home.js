@@ -2,12 +2,12 @@ function execute() {
   return Response.success([
     {
       title: "Cập Nhật",
-      input: "https://sangtacviet.pro/?find=&minc=0&sort=update&tag=",
+      input: "http://sangtacviet.pro/?find=&minc=0&sort=update&tag=",
       script: "gen.js",
     },
     {
       title: "Nhiều Like",
-      input: "https://sangtacviet.pro/?find=&minc=0&sort=upvote&tag=",
+      input: "http://sangtacviet.pro/?find=&minc=0&sort=upvote&tag=",
       script: "gen.js",
     },
     {

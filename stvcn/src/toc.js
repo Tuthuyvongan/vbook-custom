@@ -1,57 +1,30 @@
 function execute(url) {
-  console.log(url);
   if (url.slice(-1) !== "/") url = url + "/";
-  let response = fetch(url);
-  let doc = response.html();
-  let source = url.split("/")[4];
-  let bookId = doc.select("span[id=hiddenid]").first().text().split(";")[0];
-  let newUrl =
-    "https://sangtacviet.pro/truyen/index.php?ngmar=chapterlist&h=" +
-    source +
-    "&bookid=" +
-    bookId +
-    "&sajax=getchapterlist" +
-    "&force=true";
-  let list = [];
-  let reponse = fetch(newUrl.replace(/&amp;/g, "&"));
-  if (reponse.ok) {
-    let data = reponse.json();
-    let chapList = data.data;
-    let list1 = ["biqugeinfo", "biqugexs", "uuxs", "zwdu"];
-    let list12 = ["69shuorg", "xbiquge"];
-    let start;
-    if (chapList) {
-      chapList = chapList.split("-//-");
-      if (source === "uukanshu") {
-        start = chapList.length - 1;
-      } else if (list12.includes(source) === true) {
-        start = 12;
-      } else if (source === "biqugese") {
-        start = 10;
-      } else if (source === "biqugebz") {
-        start = 9;
-      } else if (source === "69shu") {
-        start = 5;
-      } else if (list1.includes(source) === true) {
-        start = 1;
-      } else {
-        start = 0;
-      }
-      let end = source === "uukanshu" ? -1 : chapList.length;
-      let step = source === "uukanshu" ? -1 : 1;
-      for (; start !== end; start += step) {
-        let chap = chapList[start].split("-/-");
-        let name = chap[2];
-        if (name) {
-          list.push({
-            name: name.replace("\n", "").trim().replace(/\s\s+/g, " "),
-            url: url + "/" + chap[1],
-            host: "https://sangtacviet.pro",
-          });
-        }
-      }
+  let browser = Engine.newBrowser();
+  browser.launchAsync(url);
+
+  var retry = 0;
+  let chapList = [];
+  while (retry < 5) {
+    sleep(2000);
+    let doc = browser.callJs(
+      "document.getElementById('chaptercontainerinner').scrollIntoView();",
+      100
+    );
+    var el = doc.select("#chaptercontainerinner a");
+    if (el.length > 0) {
+      el.forEach((e) => {
+        chapList.push({
+          name: e.text(),
+          url: e.attr("href"),
+          pay: e.select(".vip").length > 0,
+          host: "https://sangtacviet.pro",
+        });
+      });
+      break;
     }
-    return Response.success(list);
+    retry++;
   }
-  return null;
+  browser.close();
+  return Response.success(list);
 }

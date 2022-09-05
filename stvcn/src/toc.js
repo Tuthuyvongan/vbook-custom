@@ -4,7 +4,7 @@ function execute(url) {
   browser.launchAsync(url);
 
   var retry = 0;
-  let chapList = [];
+  let list = [];
   while (retry < 5) {
     sleep(2000);
     let doc = browser.callJs(
@@ -14,7 +14,7 @@ function execute(url) {
     var el = doc.select("#chaptercontainerinner a");
     if (el.length > 0) {
       el.forEach((e) => {
-        chapList.push({
+        list.push({
           name: e.text(),
           url: e.attr("href"),
           pay: e.select(".vip").length > 0,

@@ -1,10 +1,10 @@
 {
     "metadata": {
-        "name": "STV Limited ver Tiếng Trung",
-        "author": "Moleys",
-        "version": 24,
-        "source": "https://sangtacviet.me",
-        "regexp": "(www.)?sangtacviet.(info|com|xyz|me)/truyen/([a-zA-Z0-9])+/\\d+/\\d+/?$",
+        "name": "STV 155",
+        "author": "1509",
+        "version": 3,
+        "source": "https://sangtacviet.pro",
+        "regexp": "(www.)?sangtacviet.(info|com|xyz|pro)/truyen/([a-zA-Z0-9])+/\\d+/\\d+/?$",
       "description": "Ngôn ngữ của extension này là tiếng TRUNG QUỐC, không phải TIẾNG VIỆT",
         "locale": "zh_CN",
         "language": "javascript",
@@ -16,6 +16,6 @@
         "search": "search.js",
         "detail": "detail.js",
         "toc": "toc.js",
-        "chap": "chap.js"
+        "chap": "chap2.js"
     }
 }

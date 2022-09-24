@@ -1,63 +1,101 @@
 function execute(url) {
-    if(url.slice(-1) !== "/")
-        url = url + "/";
-    let el1 =""
-    var browser = Engine.newBrowser() // Khởi tạo browser
-    let doc = browser.launch(url, 5000) // Mở trang web với timeout, trả về Document object
-    el1 = doc.select("#content-container")
-    browser.close()
-    console.log(el1)
+  if (url.slice(-1) !== "/") url = url + "/";
+  let browser = Engine.newBrowser();
+  browser.launchAsync(url);
+  browser.waitUrl(".*?index.php.*?sajax=readchapter.*?", 10000);
 
-    el1 = el1.html()
-    el1 = Html.clean(el1, ["i","br"]).replace(/<i>/g, "").replace(/<\/i>/g, "").replace("@Bạn đang đọc bản lưu trong hệ thống \n<br>","").replace(/  /g, " ")
+  var retry = 0;
+  var content = "";
+  while (retry < 5) {
+    sleep(2000);
+    let doc = browser.html();
+    var text = doc.select("#content-container > .contentbox").text();
+    if (text.indexOf("Đang tải nội dung chương") === -1) {
+      content = doc.select("#content-container > .contentbox").html();
+      break;
+    }
+    retry++;
+  }
 
+  browser.close();
 
-    // el1.select("span").remove()
-    // el1 = el1.html()
-    // el1 = el1.replace(/\"/g,"'")
-    // const regex1 = /h='(.*?)'/g;
-    // const regex2 = /p='(.*?)'/g;
-    // const regex3 = /v='(.*?)'/g;
-    // const regex4 = /id='(.*?)'/g;
-    // const regex5 = /<i t='(.*?)'  >(.*?)<\/i>/g;
-    // el1 = el1.replace(regex1, "").replace(regex2, "").replace(regex3, "").replace(regex4, "").replace(regex5, "$1")
-    // el1 = Html.clean(el1, ["i","br"])
+  let charMap = {
+    Ҋ: "U",
+    ҋ: "p",
+    Ҍ: "N",
+    ҍ: "e",
+    Ҏ: "d",
+    ҏ: "u",
+    Ґ: "P",
+    ґ: "z",
+    Ғ: "j",
+    ғ: "C",
+    Ҕ: "H",
+    ҕ: "g",
+    Җ: "D",
+    җ: "y",
+    Ҙ: "n",
+    ҙ: "m",
+    Қ: "M",
+    қ: "c",
+    Ҝ: "O",
+    ҝ: "W",
+    Ҟ: "T",
+    ҟ: "w",
+    Ҡ: "B",
+    ҡ: "A",
+    Ң: "G",
+    ң: "Z",
+    Ҥ: "Q",
+    ҥ: "v",
+    Ҧ: "q",
+    ҧ: "V",
+    Ҩ: "o",
+    ҩ: "f",
+    Ҫ: "F",
+    ҫ: "Y",
+    Ҭ: "J",
+    ҭ: "l",
+    Ү: "k",
+    ү: "X",
+    Ұ: "s",
+    ұ: "L",
+    Ҳ: "x",
+    ҳ: "h",
+    Ҵ: "E",
+    ҵ: "K",
+    Ҷ: "a",
+    ҷ: "R",
+    Ҹ: "S",
+    ҹ: "b",
+  };
+  // console.log(content)
+  var newContent = "";
+  for (let i = 0; i < content.length; i++) {
+    let newChar = charMap[content[i]];
+    if (newChar) {
+      newContent += newChar;
+    } else {
+      newContent += content[i];
+    }
+  }
 
-
-    // el1 = el1.replace(/\"/g,"'")
-    // content = el1.replace(/<a href=.*?<\/a>/g, "");
-    // const regex1 = /<i h='(.*?)'t='(.*?)'v='(.*?)'p='(.*?)'>(.*?)<\/i>/g;
-    // content = content.replace(regex1, "$2").replace(/ /g,"").replace(/\n/g, "<br>");
-    // content = content.replace(/<(\/)?i.*?>/g, "");
-    // content = content.replace(/<span.*?>(.*?)<\/span>(<br>)?/g, "");
-    // content = content.replace(/(\n)?\t/g, "<br>");
-    // content = content.replace(/\s{2,}/g, " ");
-    // if (url.indexOf("bxwxorg") > 0) {
-    //     content = content.replace(/<\/?p.*?>/g, "");
-    //     content = content.replace(/(Ta chiếm được.*:?)/g, "");
-    // }
-    // if (url.indexOf("uukanshu") > 0) {
-    //     content = content.replace("UUKANSHU đọc sách www.uukanshu.com", "");
-    //     content = content.replace(/<div.*?>(.*?)<\/div>/g, "");
-    //     content = content.replace(/<p><\/p>\t<br>/g,"");
-    //     content = content.replace(/<\/div>/g,"");
-    //     content = content.replace(/\(https.*<br>/g,"");
-    // }
-    // if (url.indexOf("aikanshu") > 0) {
-    //     content = content.replace(/<img.*?src="\/novel\/images.*?>/g, "");
-    // }
-    // if (url.indexOf("ciweimao") > 0) {
-    //     content = content.replace(/<span>.*?<\/span>/g, "");
-    //     content = content.replace(/<\/?p.*?>/g, "");
-    // }
-    // content = content.replace(/&(nbsp|amp|quot|lt|gt|bp|emsp);/g, "");
-    // content = content.replace(/(<br\/?>)+/g,"<br>");
-    // content = content.replace(/<\/p><br><br><p>/g,"<br><br>");
-    // content = content.replace(/ ([,\.!\?”]+)/g,"$1");
-    // content = content.replace(/ ([,\.!\?”]+)/g,"$1");
-
-    //Đã lọc rác có thể. còn nhiều vcl ra ý. tự lọc đi
-    return Response.success(el1);
+  newContent = newContent.replace(/<p>/g, "");
+  newContent = newContent.replace(/\s/g, "");
+  newContent = newContent.replace(/<span.*?>(.*?)<\/span>(<br>)?/g, "");
+  newContent = newContent.replace(/<iid=\"exran(.*?)\">(.*?)<\/i>/g, "$2");
+  newContent = newContent.replace(/<ih=\"(.*?)\"t=\"/g, "");
+  newContent = newContent.replace(
+    /\"v=\"(.*?)\"p=\"(.*?)\"id=\"(.*?)\">(.*?)<\/i>/g,
+    ""
+  );
+  newContent = newContent.replace(/&lt;p&gt;/g, "");
+  newContent = newContent.replace(/<span.*?>(.*?)<\/span>(<br>)?/g, "");
+  newContent = newContent.replace(/<a href=.*?<\/a>/g, "");
+  newContent = newContent.replace(/<br>/g, "\n");
+  newContent = newContent.replace(/\n+/g, "<br>");
+  newContent = newContent.replace(/\u201c/g, "");
+  newContent = newContent.replace(/\u201d/g, "");
+  newContent = newContent.replace(/&(nbsp|amp|quot|lt|gt|bp|emsp);/g, "");
+  return Response.success(newContent);
 }
-
-

@@ -5,24 +5,24 @@
   },
   "data": [
     {
-      "name": "STV bản tiếng trung",
-      "author": "dat-bi",
-      "path": "https://raw.githubusercontent.com/dat-bi/ext-vbook/main/stv/plugin.zip",
-      "version": 3,
-      "source": "www.sangtacviet.pro",
-      "icon": "https://raw.githubusercontent.com/dat-bi/ext-vbook/main/stv/icon.png",
-      "description": "sangtacviet",
+      "name": "tcknh",
+      "author": "Moleys",
+      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/tcknh/plugin.zip",
+      "version": 1,
+      "source": "http://www.tcknh.com",
+      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/tcknh/icon.png",
+      "description": "Đọc truyện trên trang http://www.tcknh.com",
       "type": "chinese_novel",
       "locale": "zh_CN"
     },
     {
-      "name": "STV Limited ver Tiếng Trung",
-      "author": "Moleys",
-      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stvcn/plugin.zip",
-      "version": 24,
-      "source": "https://sangtacviet.pro",
-      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/stvcn/icon.png",
-      "description": "Ngôn ngữ của extension này là tiếng TRUNG QUỐC, không phải TIẾNG VIỆT",
+      "name": "51du",
+      "author": "Leo",
+      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/plugin.zip",
+      "version": 7,
+      "source": "https://www.51du.org",
+      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/icon.png",
+      "description": "Đọc truyện trên trang 51du.org",
       "type": "chinese_novel",
       "locale": "zh_CN"
     }

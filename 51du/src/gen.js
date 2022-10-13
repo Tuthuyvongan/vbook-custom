@@ -11,7 +11,7 @@ function execute(url, page) {
         cover:
           "http:" + e.select(".fengtui a img").first().attr("data-original"),
         description: e.select(".fengtui p").first().text(),
-        host: "http://www.51du.org",
+        host: "https://www.51du.org",
       });
     });
 

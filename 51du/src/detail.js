@@ -20,7 +20,7 @@ function execute(url) {
       description: doc.select(".jieshao p").text(),
       novelTags: novelTags,
       detail: "作者： " + author + "<br>" + novelTags,
-      host: "http://www.51du.org",
+      host: "https://www.51du.org",
     });
   }
   return null;

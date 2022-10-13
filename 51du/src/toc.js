@@ -33,8 +33,8 @@ function execute(url) {
       var e = el.get(i);
       data.push({
         name: e.select("a").text(),
-        url: "http://www.51du.org" + e.attr("href"),
-        host: "http://www.51du.org",
+        url: e.attr("href"),
+        host: "https://www.51du.org",
       });
     }
     return Response.success(data);

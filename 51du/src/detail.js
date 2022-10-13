@@ -17,7 +17,7 @@ function execute(url) {
         .text()
         .replace(/作\s*者：/g, ""),
       description: doc.select(".jieshao p").text(),
-      detail: doc.select(".msg em")[2].text(),
+      detail: doc.select(".msg em").get(2).text(),
       host: "http://www.51du.org",
     });
   }

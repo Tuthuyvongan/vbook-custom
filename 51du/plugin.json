@@ -2,7 +2,7 @@
   "metadata": {
     "name": "51du",
     "author": "Leo",
-    "version": 1,
+    "version": 2,
     "source": "https://www.51du.org",
     "regexp": "(www.|m.)?51du.org/xs/\\d+(/?|\\.html)",
     "description": "Đọc truyện trên trang 51du.org",

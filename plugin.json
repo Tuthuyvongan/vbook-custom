@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "author": "Custom from Moleys",
+    "author": "Leo",
     "description": "🧐"
   },
   "data": [
@@ -8,7 +8,7 @@
       "name": "51du",
       "author": "Leo",
       "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/plugin.zip",
-      "version": 1,
+      "version": 2,
       "source": "https://www.51du.org",
       "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/icon.png",
       "description": "Đọc truyện trên trang 51du.org",

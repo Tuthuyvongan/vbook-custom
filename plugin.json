@@ -5,17 +5,6 @@
   },
   "data": [
     {
-      "name": "tcknh",
-      "author": "Moleys",
-      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/tcknh/plugin.zip",
-      "version": 1,
-      "source": "http://www.tcknh.com",
-      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/tcknh/icon.png",
-      "description": "Đọc truyện trên trang http://www.tcknh.com",
-      "type": "chinese_novel",
-      "locale": "zh_CN"
-    },
-    {
       "name": "51du",
       "author": "Leo",
       "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/plugin.zip",

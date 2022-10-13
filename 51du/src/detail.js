@@ -3,7 +3,7 @@ function execute(url) {
   let response = fetch(url);
   if (response.ok) {
     let doc = response.html();
-    let coverImg = doc.select(".lf img").first().attr("src");
+    let coverImg = doc.select(".jieshao .lf img").first().attr("src");
     if (coverImg.startsWith("//")) {
       coverImg = "http:" + coverImg;
     }
@@ -15,10 +15,9 @@ function execute(url) {
         .select(".msg em")
         .first()
         .text()
-        .replace(/作\s*者：/g, "")
-        .replace("作者:", ""),
+        .replace(/作\s*者：/g, ""),
       description: doc.select(".jieshao p").text(),
-      detail: doc.select(".msg a").get(2).html(),
+      detail: doc.select(".msg em")[2].text(),
       host: "http://www.51du.org",
     });
   }

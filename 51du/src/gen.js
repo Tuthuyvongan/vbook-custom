@@ -4,13 +4,13 @@ function execute(url, page) {
   if (response.ok) {
     let doc = response.html();
     const data = [];
-    doc.select(".reviews-bd .review").forEach((e) => {
+    doc.select(".fengtui").forEach((e) => {
       data.push({
         name: e.select("h3 a").first().text(),
-        link: e.select(".review-hd a").first().attr("href"),
+        link: e.select(".fengtui a").first().attr("href"),
         cover:
-          "http:" + e.select(".review-hd a img").first().attr("data-original"),
-        description: e.select(".review-content").first().text(),
+          "http:" + e.select(".fengtui a img").first().attr("data-original"),
+        description: e.select(".fengtui p").first().text(),
         host: "http://www.51du.org",
       });
     });

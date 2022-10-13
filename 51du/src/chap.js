@@ -4,7 +4,7 @@ function execute(url) {
 
   if (response.ok) {
     let doc = response.html();
-    let htm = doc.select(".novel").html();
+    let htm = doc.select(".yd_text2").html();
     htm = htm.replace(/\&nbsp;/g, "");
     return Response.success(htm);
   }

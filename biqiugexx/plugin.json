@@ -4,7 +4,7 @@
     "author": "Leo",
     "version": 1,
     "source": "https://www.biqiugexx.com",
-    "regexp": "(www.|m.)?biqiugexx.com/book_\\d+/?$",
+    "regexp": "(www.|m.)?biqiugexx.com/(book|chapters)_\\d+/?$",
     "description": "Đọc truyện trên trang biqiugexx.com",
     "locale": "zh_CN",
     "language": "javascript",

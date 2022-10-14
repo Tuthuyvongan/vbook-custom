@@ -35,10 +35,7 @@ function execute(url) {
       data.push({
         name: e.select("a").text(),
         url:
-          url +
-          "/" +
-          p.substring(p.indexOf("./") + 2, p.lastIndexOf(".")) +
-          ".html",
+          url + p.substring(p.indexOf("./") + 1, p.lastIndexOf(".")) + ".html",
         host: "https://www.23meigui.com",
       });
     }

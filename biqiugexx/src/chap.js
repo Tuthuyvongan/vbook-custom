@@ -6,7 +6,8 @@ function execute(url) {
     let doc = response.html();
     let htm = doc.select("#content").html();
     let scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
-    htm = htm.replace(/\&nbsp;/g, "").replace(scriptRegex, "");
+    htm = htm.replace(/\&nbsp;/g, "");
+    htm = htm.replace(scriptRegex, "");
     return Response.success(htm);
   }
   return null;

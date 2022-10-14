@@ -6,7 +6,7 @@ function execute(url) {
     let el1 = doc.select(".listmain").last();
     let el = el1.select("dd a");
     const data = [];
-    for (let i = 11; i < el.size(); i++) {
+    for (let i = 12; i < el.size(); i++) {
       var e = el.get(i);
       data.push({
         name: e.select("a").text(),

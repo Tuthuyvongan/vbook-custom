@@ -34,7 +34,12 @@ function execute(url) {
       let p = e.attr("onclick");
       data.push({
         name: e.select("a").text(),
-        url: url + p.substring(p.indexOf("./") + 2).replace(`','_self');`, ""),
+        url:
+          url +
+          p
+            .substring(p.indexOf("./") + 2)
+            .replace(`.\u0068\u0074\u006d\u006c','_self');`, "") +
+          ".html",
         host: "https://www.23meigui.com",
       });
     }

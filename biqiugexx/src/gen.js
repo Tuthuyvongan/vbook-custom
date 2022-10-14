@@ -1,5 +1,6 @@
 function execute(url, page) {
   url = url.replace("m.biqiugexx.com", "www.biqiugexx.com");
+  url;
   let response = fetch(url);
   if (response.ok) {
     let doc = response.html();

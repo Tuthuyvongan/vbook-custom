@@ -4,8 +4,9 @@ function execute(url) {
 
   if (response.ok) {
     let doc = response.html();
-    let htm = doc.select("#content").removeAttribute("script").html();
-    htm = htm.replace(/\&nbsp;/g, "");
+    let htm = doc.select("#content").html();
+    let scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+    htm = htm.replace(/\&nbsp;/g, "").replace(scriptRegex, "");
     return Response.success(htm);
   }
   return null;

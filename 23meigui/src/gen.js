@@ -7,9 +7,11 @@ function execute(url, page) {
     doc.select(".article .block").forEach((e) => {
       data.push({
         name: e.select(".block_h2 a").first().text(),
-        link: url + e.select(".block_h2 a").first().attr("href"),
+        link:
+          "https://www.23meigui.com" +
+          e.select(".block_h2 a").first().attr("href"),
         cover: e.select(".block_img").first().attr("src"),
-        description: e.select(".block_txt p").first().text(),
+        description: e.select(".block_txt p").last().text(),
         host: "https://www.23meigui.com",
       });
     });

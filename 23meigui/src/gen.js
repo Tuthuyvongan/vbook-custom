@@ -7,8 +7,8 @@ function execute(url, page) {
     doc.select(".article .block").forEach((e) => {
       data.push({
         name: e.select(".block_h2 a").first().text(),
-        link: e.select(".block_h2 a").first().attr("href"),
-        cover: "http:" + e.select(".block_img").first().attr("data-original"),
+        link: url + e.select(".block_h2 a").first().attr("href"),
+        cover: e.select(".block_img").first().attr("src"),
         description: e.select(".block_txt p").first().text(),
         host: "https://www.23meigui.com",
       });

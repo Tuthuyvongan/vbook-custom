@@ -8,12 +8,21 @@
       "name": "51du",
       "author": "Leo",
       "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/plugin.zip",
-      "version": 2,
+      "version": 3,
       "source": "https://www.51du.org",
       "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/51du/icon.png",
       "description": "Đọc truyện trên trang 51du.org",
       "type": "chinese_novel",
       "locale": "zh_CN"
+    },
+    {
+      "name": "Fanqie Novel",
+      "author": "Nhocconsr",
+      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/fanqienovel/plugin.zip",
+      "version": 1,
+      "source": "https://fanqienovel.com",
+      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/fanqienovel/icon.png",
+      "description": "Đọc truyện trên trang fanqienovel.com"
     }
   ]
 }

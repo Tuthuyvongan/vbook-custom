@@ -4,7 +4,7 @@ function execute(url, page) {
   if (response.ok) {
     let doc = response.html();
     const data = [];
-    doc.select(".fengtui").forEach((e) => {
+    doc.select(".fengtui dl").forEach((e) => {
       data.push({
         name: e.select("h3 a").first().text(),
         link: e.select(".fengtui a").first().attr("href"),

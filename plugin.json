@@ -1,7 +1,7 @@
 {
   "metadata": {
     "author": "Leo",
-    "description": "🧐"
+    "description": "..."
   },
   "data": [
     {
@@ -23,6 +23,17 @@
       "source": "http://www.twbook.cc",
       "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/twbook/icon.png",
       "description": "Đọc truyện trên trang http://www.twbook.cc",
+      "type": "chinese_novel",
+      "locale": "zh_CN"
+    },
+    {
+      "name": "pixiv",
+      "author": "Leo",
+      "path": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/pixiv/plugin.zip",
+      "version": 1,
+      "source": "https://www.pixiv.net/en/tags/%E4%B8%AD%E6%96%87/novels",
+      "icon": "https://raw.githubusercontent.com/Tuthuyvongan/vbook-custom/master/pixiv/icon.png",
+      "description": "Đọc truyện trên trang https://www.pixiv.net",
       "type": "chinese_novel",
       "locale": "zh_CN"
     }

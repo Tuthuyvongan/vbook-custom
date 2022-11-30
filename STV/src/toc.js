@@ -15,11 +15,11 @@ function execute(url) {
           list.push({
             name: item["title"],
             url:
-              "https://sangtacviet.pro/truyen/fanqie/1/" +
+              "https://sangtacviet.com/truyen/fanqie/1/" +
               idBook +
               "/" +
               item["itemId"],
-            host: "https://sangtacviet.pro",
+            host: "https://sangtacviet.com",
           });
         }
       }
@@ -36,11 +36,11 @@ function execute(url) {
         data.push({
           name: e.select("a").text(),
           url:
-            "https://sangtacviet.pro/truyen/uukanshu/1/" +
+            "https://sangtacviet.com/truyen/uukanshu/1/" +
             idBook +
             "/" +
             e.attr("name"),
-          host: "https://sangtacviet.pro",
+          host: "https://sangtacviet.com",
         });
       }
 
@@ -80,11 +80,11 @@ function execute(url) {
       data.push({
         name: capitalize(e.text()),
         url:
-          "https://sangtacviet.pro/truyen/tadu/1/" +
+          "https://sangtacviet.com/truyen/tadu/1/" +
           idBook +
           "/" +
           e.attr("href").replace("/book/", "").replace(/\s/g, ""),
-        host: "https://sangtacviet.pro",
+        host: "https://sangtacviet.com",
       });
     }
 
@@ -102,11 +102,11 @@ function execute(url) {
         data.push({
           name: name,
           url:
-            "https://sangtacviet.pro/truyen/ciweimao/1/" +
+            "https://sangtacviet.com/truyen/ciweimao/1/" +
             idBook +
             "/" +
             e.attr("href").match(/\d+/),
-          host: "https://sangtacviet.pro",
+          host: "https://sangtacviet.com",
         });
       }
       return Response.success(data);
@@ -149,7 +149,7 @@ function execute(url) {
         list.push({
           name: e.text(),
           url: url + j,
-          host: "https://sangtacviet.pro",
+          host: "https://sangtacviet.com",
         });
       }
       return Response.success(list);

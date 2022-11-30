@@ -19,6 +19,7 @@ function execute(url) {
               idBook +
               "/" +
               item["itemId"],
+            host: "https://sangtacviet.pro",
           });
         }
       }
@@ -39,6 +40,7 @@ function execute(url) {
             idBook +
             "/" +
             e.attr("name"),
+          host: "https://sangtacviet.pro",
         });
       }
 
@@ -82,6 +84,7 @@ function execute(url) {
           idBook +
           "/" +
           e.attr("href").replace("/book/", "").replace(/\s/g, ""),
+        host: "https://sangtacviet.pro",
       });
     }
 
@@ -103,6 +106,7 @@ function execute(url) {
             idBook +
             "/" +
             e.attr("href").match(/\d+/),
+          host: "https://sangtacviet.pro",
         });
       }
       return Response.success(data);
@@ -145,6 +149,7 @@ function execute(url) {
         list.push({
           name: e.text(),
           url: url + j,
+          host: "https://sangtacviet.pro",
         });
       }
       return Response.success(list);

@@ -1,6 +1,7 @@
 function execute(url) {
   if (url.slice(-1) !== "/") url = url + "/";
   var idBook = url.split("/")[6];
+  var idChap = url.split("/")[7];
   var idHost = url.split("/")[4];
   if (idHost === "fanqie") {
     var json = Http.get("https://fanqienovel.com/api/reader/directory/detail")
@@ -18,7 +19,8 @@ function execute(url) {
               "https://sangtacviet.pro/truyen/fanqie/1/" +
               idBook +
               "/" +
-              item["itemId"],
+              item["itemId"] +
+              idChap,
           });
         }
       }
@@ -102,6 +104,7 @@ function execute(url) {
             "https://sangtacviet.pro/truyen/ciweimao/1/" +
             idBook +
             "/" +
+            idChap +
             e.attr("href").match(/\d+/),
         });
       }

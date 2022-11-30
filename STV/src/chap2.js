@@ -1,5 +1,4 @@
 function execute(url) {
-  url = "https://sangtacviet.pro/" + url;
   if (url.slice(-1) !== "/") url = url + "/";
   let browser = Engine.newBrowser();
   browser.launchAsync(url);

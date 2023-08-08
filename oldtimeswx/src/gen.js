@@ -1,10 +1,8 @@
 load("libs.js");
 function execute(url, page) {
-  let host = "https://www.oldtimeswx.cc";
+  let host = "https://m.oldtimeswx.cc";
   if (!page) page = "1";
-  let response = fetch(
-    "https://www.oldtimeswx.cc/" + url + "-" + page + ".html"
-  );
+  let response = fetch("https://m.oldtimeswx.cc/" + url + "-" + page + ".html");
   if (response.ok) {
     let doc = response.html("gbk");
     let next = doc.select("#pagelink").select("li.active + li").text();
@@ -25,10 +23,9 @@ function execute(url, page) {
         name: box.select("h4 a").first().text(),
         link: link,
         cover:
-          cover ||
-          "https://www.oldtimeswx.cc/modules/article/images/nocover.jpg",
+          cover || "https://m.oldtimeswx.cc/modules/article/images/nocover.jpg",
         description: box.select(".author").first().text().replace("作者：", ""),
-        host: "https://www.oldtimeswx.cc",
+        host: "https://m.oldtimeswx.cc",
       });
     });
     return Response.success(data, next);

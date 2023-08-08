@@ -2,9 +2,9 @@
   "metadata": {
     "name": "oldtimeswx 【旧时光】",
     "author": "Nhocconsr",
-    "version": 2,
-    "source": "https://www.oldtimeswx.cc",
-    "regexp": "(www.)?www.oldtimeswx.cc/go/\\d+/?",
+    "version": 3,
+    "source": "https://m.oldtimeswx.cc",
+    "regexp": "(m.)?m.oldtimeswx.cc/go/\\d+/?",
     "description": "Nếu lỗi báo cáo email : phamgiavang@gmail.com hoặc discord",
     "locale": "zh-CN",
     "language": "javascript",
